@@ -9,8 +9,6 @@ router.post('/', (req, res) => {
   var token = req.body.token;
   var birdId = req.body.birdId;
 
-  console.log('birdId:', birdId);
-
   Bird.findById(birdId, (err, bird) => {
     if(err || !bird) {
       return res.status(400).send(err || { error: 'Bird not found.' })
@@ -22,7 +20,7 @@ router.post('/', (req, res) => {
 
       res.send(charge);
     });
-  });  
+  });
 });
 
 module.exports = router;

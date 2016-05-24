@@ -7,18 +7,18 @@
     <script src="https://js.stripe.com/v2/"></script>
     <script src="/bower_components/angular/angular.min.js"></script>
     <script src="/bower_components/angular-stripe-checkout/angular-stripe-checkout.js"></script>
-<!--     
+<!--
     <script>
       Stripe.setPublishableKey( <%= STRIPEKEY %> );
     </script>
  -->
-    <script src="/js/module.js"></script>
+  <script src="/js/module.js"></script>
   </head>
   <body ng-app='stripeApp' ng-controller='mainCtrl'>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
 
-    <<!-- button stripe-checkout="doCheckout"
+    <!-- button stripe-checkout="doCheckout"
             data-key="pk_test_HJNWPlajghxupBJagvAGHsAJ"
             data-name="Bubba's Best Birds"
             data-description="Penguin"
@@ -41,7 +41,7 @@
           <td>
             <button ng-click='selectBird(bird._id)'
                     stripe-checkout="doCheckout"
-                    data-key="pk_test_HJNWPlajghxupBJagvAGHsAJ"
+                    data-key= <%= STRIPEKEY %>
                     data-name="Bubba's Best Birds"
                     data-description="{{bird.variety}}"
                     data-amount="{{bird.value * 100}}">
